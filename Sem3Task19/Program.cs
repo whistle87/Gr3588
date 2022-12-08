@@ -15,11 +15,8 @@ if (outputNumber>=10000&&outputNumber<=99999)
             }
         }
 
-    //create four digit number from output data
-    int numFourDigit = ((outputNumber/1000)*100)+(outputNumber%100);
-
     // check if there is a number in dictionary  
-    if (palindrome.ContainsValue(numFourDigit))
+    if (palindrome.ContainsValue((outputNumber/1000)*100+(outputNumber%100)))
     {
         PrintData(outputNumber, " is a palindrome");
     }
