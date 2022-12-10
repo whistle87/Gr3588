@@ -1,7 +1,7 @@
 ﻿//solution
 int number = ReadData("Enter a length of array: ");
 int[] array = GenArray(number);
-PrintArray(array);
+PrintResult("Array: ", array);
 
 int ReadData(string message)
 {
@@ -27,4 +27,10 @@ void PrintArray (int[] array)
         Console.Write(array[i]+",");
     }
     Console.Write(array[array.Length-1]+"]");
+}
+
+void PrintResult(string line, int[] arr)
+{
+    Console.WriteLine(line);
+    PrintArray(arr);
 }
