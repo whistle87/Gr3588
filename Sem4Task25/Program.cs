@@ -8,8 +8,8 @@ PrintResult(answer);
 string ReadData(string message)
 {
     Console.WriteLine(message);
-    string outputString = Console.ReadLine()??"0";
-    return outputString;
+    string inputString = Console.ReadLine()??"0";
+    return inputString;
 }
 
 double[] ExtractNum(string inputStr)
