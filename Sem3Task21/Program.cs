@@ -7,8 +7,8 @@ PrintData("Length beetwen points ", CalculateLength(pointA[0],pointA[1],pointA[2
 int[] ReadData(string message)
 {
     Console.WriteLine(message);
-    string outputString = Console.ReadLine()??"0";
-    char[] coordString = outputString.ToCharArray();
+    string inputString = Console.ReadLine()??"0";
+    char[] coordString = inputString.ToCharArray();
     int[] coordinate = new int[3];
     coordinate[0] = ((int)coordString[0])-48;
     coordinate[1] = ((int)coordString[2])-48;
