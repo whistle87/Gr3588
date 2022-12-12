@@ -4,7 +4,7 @@ string[] names = SplitNames(inputLine);
 int randomNum = new Random().Next(0,names.Length);
 PrintResult(names[randomNum]);
 
-//method crate names array
+//method create names array
 string[] SplitNames(string line)
 {
     string[] names = line.Split(", ", StringSplitOptions.RemoveEmptyEntries);
