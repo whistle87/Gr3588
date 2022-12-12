@@ -4,14 +4,14 @@ string[] names = SplitNames(inputLine);
 int randomNum = new Random().Next(0,names.Length);
 PrintResult(names[randomNum]);
 
-//method create names array
+//method create array of names from input string
 string[] SplitNames(string line)
 {
     string[] names = line.Split(", ", StringSplitOptions.RemoveEmptyEntries);
 
     return names;
 }
-//method read data fron console
+//method read data from console
 string ReadData(string message)
 {
     Console.WriteLine(message);
