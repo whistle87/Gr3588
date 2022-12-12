@@ -5,13 +5,14 @@ char sign = ExtractSign(inpitLine);
 double answer = Calculate(numbers, sign);
 PrintResult(answer);
 
+//method read data from console
 string ReadData(string message)
 {
     Console.WriteLine(message);
     string inputString = Console.ReadLine()??"0";
     return inputString;
 }
-
+// method extract numbers from entered expression
 double[] ExtractNum(string inputStr)
 {
     double[] numbers = new double[2];
@@ -20,7 +21,7 @@ double[] ExtractNum(string inputStr)
     numbers[1] = double.Parse(inputNum[1]);
     return numbers;
 }
-
+// method return the entered sign of mathematical operation
 char ExtractSign(string inputStr)
 {
     char mathSign = ' ';
@@ -31,8 +32,7 @@ char ExtractSign(string inputStr)
     if (inputStr.Contains('^')) mathSign = '^';
     return mathSign;
 }
-
-
+// method calculate an answer usind numbes and sign
 double Calculate (double[] numbers, char mathSign)
 {
     double result = 0;
@@ -56,31 +56,31 @@ double Calculate (double[] numbers, char mathSign)
     }
     return result;
 }
-
+// method calcutale the value of num1+num2
 double Addition(double num1, double num2)
 {
     double result = num1+num2;
     return result;
 }
-
+// method calcutale the value of num1-num2
 double Subtraction(double num1, double num2)
 {
     double result = num1-num2;
     return result;
 }
-
+// method calcutale the value of num1/num2
 double Dividion(double num1, double num2)
 {
     double result = (double)num1/num2;
     return result;
 }
-
+// method calcutale the value of num1*num2
 double Multiplication(double num1, double num2)
 {
     double result = num1*num2;
     return result;
 }
-
+// method calcutale the value of num1^num2
 double CalcPow(double num1, double num2)
 {
     double result = 1;
@@ -90,7 +90,7 @@ double CalcPow(double num1, double num2)
     }
     return result;
 }
-
+// method print result to console
 void PrintResult(double num)
 {
     Console.Write(num);
