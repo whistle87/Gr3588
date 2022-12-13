@@ -24,11 +24,11 @@ int VariantString(string inputString)
 double VariantNumbers(string inputString)
 {
     double result = 0;
-    int inputNum = int.Parse(inputString);
+    double inputNum = double.Parse(inputString);
     while (inputNum>0)
     {
         result = result + inputNum%10;
-        inputNum = inputNum/10;
+        inputNum = (int)inputNum/10;
     }
     return result;
 }
