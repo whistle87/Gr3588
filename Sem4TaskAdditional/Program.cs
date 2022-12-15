@@ -2,12 +2,12 @@
 string inputLine = ReadData("Enter a list of names: ");
 string[] names = SplitNames(inputLine);
 int randomNum = new Random().Next(0,names.Length);
-PrintResult(names[randomNum]);
+PrintResult(names[randomNum].Trim());
 
 //method create array of names from input string
 string[] SplitNames(string line)
 {
-    string[] names = line.Split(", ", StringSplitOptions.RemoveEmptyEntries);
+    string[] names = line.Split(",", StringSplitOptions.RemoveEmptyEntries);
 
     return names;
 }
