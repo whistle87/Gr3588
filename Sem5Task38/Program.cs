@@ -16,12 +16,13 @@ Console.WriteLine("\nSorted by bubbles method in "+(DateTime.Now-d3));
 PrintArray(arrayBubble);
 PrintResult("The difference between min and max is ", DiffMinMax(arrayBubble));
 
+//method calculate a difference between min and max values
 int DiffMinMax(int[] arr)
 {
     int result = arr[arr.Length-1]-arr[0];
     return result;
 }
-
+// method sort an array with bubbles method
 int[] BubbleSort(int[] arr)
 {
     int[] outputArr = new int[array.Length];
@@ -43,11 +44,12 @@ int[] BubbleSort(int[] arr)
     return outputArr;
 }
 
+// method print a result of calculating
 void PrintResult(string line, int num)
 {
     Console.WriteLine("\n"+line+num);
 }
-
+//method sort an array with inserts method
 int[] SortByInserts(int[] array)
 {
     int[] outputArr = new int[array.Length];
@@ -68,7 +70,7 @@ int[] SortByInserts(int[] array)
     }
     return outputArr;
 }
-
+// method sort an array with method by counting
 int[] SortByCount(int[] arr, int[] range)
 {
     int[] countArr = new int[range[1]-range[0]+1];
@@ -95,7 +97,7 @@ int[] SortByCount(int[] arr, int[] range)
     }
     return outputArr;
 }
-
+//method print an array
 void PrintArray (int[] array)
 {
     Console.Write("[");
@@ -105,7 +107,7 @@ void PrintArray (int[] array)
     }
     Console.Write(array[array.Length-1]+"]");
 }
-
+//method create new array of the specified length and fill it with random numbers from the specified range
 int[] GenArray(int len, int[] range)
 {
     int[] array = new int[len];
