@@ -8,6 +8,7 @@ SortArray(array);
 PrintArray(array);
 PrintResult($"\nThere are {count} even elements in array");
 
+// method sort array with bubbles method
 void SortArray(int[] array)
 {
     for (int i=0; i<array.Length-1; i++)
@@ -22,7 +23,7 @@ void SortArray(int[] array)
         array[minPoz] = temp;
     }
 }
-
+//method count the amout of even numbers
 int CountEven(int[] arr)
 {
     int count = 0;
@@ -35,7 +36,7 @@ int CountEven(int[] arr)
     }
     return count;
 }
-
+//method print array
 void PrintArray (int[] array)
 {
     Console.Write("[");
@@ -45,7 +46,7 @@ void PrintArray (int[] array)
     }
     Console.Write(array[array.Length-1]+"]");
 }
-
+//method create new array of the specified length and fill it witn random numbers from specified range
 int[] GenArray(int len, int min, int max)
 {
     int[] array = new int[len];
@@ -55,7 +56,7 @@ int[] GenArray(int len, int min, int max)
     }
     return array;
 }
-
+//method print result
 void PrintResult(string line)
 {
     Console.WriteLine(line);
