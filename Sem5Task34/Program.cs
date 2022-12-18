@@ -3,34 +3,30 @@ int[] array = GenArray(123,100,999);
 PrintArray(array);
 Console.WriteLine();
 int count = CountEven(array);
-PrintResult($"There are {count} even elements in array");
 Console.WriteLine("Sorted array:");
 SortArray(array);
 PrintArray(array);
+PrintResult($"\nThere are {count} even elements in array");
 
 void SortArray(int[] array)
 {
-    //int[] outputArray = new int[array.Length];
-    int temp = array[0];
     for (int i=0; i<array.Length-1; i++)
     {
-        for(int j=i+1;j<array.Length-1;j++)
+        int minPoz = i;
+        for(int j=i+1;j<array.Length;j++)
         {
-            if (array[i]>array[j])
-            {
-                temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-            }
+            if (array[j]<array[minPoz]) minPoz = j;
         }
+        int temp = array[i];
+        array[i] = array[minPoz];
+        array[minPoz] = temp;
     }
-   // return array;
 }
 
 int CountEven(int[] arr)
 {
     int count = 0;
-    for (int i=0; i<arr.Length-1; i++)
+    for (int i=0; i<arr.Length; i++)
     {
         if (arr[i]%2==0)
         {
