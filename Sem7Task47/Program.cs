@@ -1,4 +1,4 @@
-﻿
+﻿//method print array with double numbers and every digit print different colour
 void Print2DArrayColor(double[,] matrix)
 {
     ConsoleColor[] col = new ConsoleColor[]
@@ -36,14 +36,14 @@ void Print2DArrayColor(double[,] matrix)
         Console.WriteLine();
     }
 }
-
+// method read data from console
 int ReadData(string message)
 {
     Console.WriteLine(message);
     int inputNum = int.Parse(Console.ReadLine() ?? "0");
     return inputNum;
 }
-
+// method fill array with random double numbers
 double[,] Fill2DArray(int countRow, int countColumn, int topBorder, int downBorder)
 {
     System.Random rand = new System.Random();
