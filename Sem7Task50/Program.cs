@@ -1,5 +1,4 @@
-﻿//System.Numerics
-//method print array and element at given posisiotn is printed in different colour
+﻿//method print array and element at given posisiotn is printed in different colour
 void Print2DArrayHighlight(long[,] matrix, int row, int column)
 {
     ConsoleColor[] col = new ConsoleColor[]
@@ -52,8 +51,7 @@ long[,] Fill2DFibonacci(int countRow, int countColumn)
     array2D[0,0] = 0;
     array2D[0,1] = 1;
     int second = 1; 
-    int first = 0;
-   // int buf = 0;   
+    int first = 0; 
     for (int i = 0; i < countRow; i++)
     {
         for (int j = 0; j < countColumn; j++)
