@@ -29,9 +29,9 @@ void Print2DArrayColor(double[,] matrix)
             {   
                 Console.ForegroundColor = col[new System.Random().Next(0, 16)];
                 Console.Write(numString[elem]);
+                Console.ResetColor();
             }
-            Console.Write("           ".Substring(matrix[i,j].ToString().Length));
-            Console.ResetColor();
+            Console.Write("           ".Substring(matrix[i,j].ToString().Length));           
         }
         Console.WriteLine();
     }
@@ -56,11 +56,9 @@ double[,] Fill2DArray(int countRow, int countColumn, int topBorder, int downBord
             array2D[i,j] = Math.Round(array2D[i,j],3);
         }
     }
-
     return array2D;
 }
-
-//
+//solution
 int row = ReadData("Enter an amount of row ");
 int column = ReadData("Enter an amount of column ");
 double[,] arr2D = Fill2DArray(row, column, 1, 50);
