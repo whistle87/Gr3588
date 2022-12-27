@@ -63,8 +63,8 @@ void Change2dArray (int[,] matr)
     }
 }
 
-int row = ReadData("Enter am amount of row ");
-int column = ReadData("Enter am column of row ");
+int row = ReadData("Enter an amount of row ");
+int column = ReadData("Enter an amout of column ");
 int[,] arr2D = Fill2DArray(row, column, 1,10);
 Print2DArrayColor(arr2D);
 Change2dArray(arr2D);

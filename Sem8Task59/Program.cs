@@ -95,8 +95,8 @@ int[,] Convert2DArray(int[,] arr, int x, int y)
     return outArray;
 }
 //solution
-int row = ReadData("Enter am amount of row ");
-int column = ReadData("Enter am column of row ");
+int row = ReadData("Enter an amount of row ");
+int column = ReadData("Enter an amoun of column ");
 int[,] arr2D = Fill2DArray(row, column, 0, 99);
 Print2DArrayColor(arr2D);
 Console.WriteLine();

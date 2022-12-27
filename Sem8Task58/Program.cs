@@ -69,10 +69,10 @@ int[,] MatrixMultiplication(int[,] matrixA, int[,] matrixB)
     return result;
 }
 
-int firstRow = ReadData("Enter am amount of row in first matrix");
-int firstColumn = ReadData("Enter am amount of column in first matrix");
-int secondRow = ReadData("Enter am amount of row in second matrix");
-int secondColumn = ReadData("Enter am amount of column in second matrix ");
+int firstRow = ReadData("Enter an amount of row in first matrix");
+int firstColumn = ReadData("Enter an amount of column in first matrix");
+int secondRow = ReadData("Enter an amount of row in second matrix");
+int secondColumn = ReadData("Enter an amount of column in second matrix ");
 int[,] firstMatrix = Fill2DArray(firstRow, firstColumn, 0, 5);
 Print2DArrayColor(firstMatrix);
 Console.WriteLine();
