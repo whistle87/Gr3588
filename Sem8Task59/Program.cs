@@ -6,7 +6,7 @@ int ReadData(string message)
     return inputNum;
 }
 
-// method fill array with random int numbers
+// method fill matrix with random int numbers
 int[,] Fill2DArray(int countRow, int countColumn, int topBorder, int downBorder)
 {
     System.Random rand = new System.Random();
