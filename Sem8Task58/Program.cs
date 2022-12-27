@@ -54,15 +54,13 @@ void Print2DArrayColor(int[,] matrix)
         Console.WriteLine();
     }
 }
-
+//method multiplies two matrix
 int[,] MatrixMultiplication(int[,] matrixA, int[,] matrixB)
 {
     int aRows = matrixA.GetLength(0);
     int aCols = matrixA.GetLength(1);
     int bRows = matrixB.GetLength(0);
     int bCols = matrixB.GetLength(1);
-    // if (aCols != bRows)
-    // throw new Exception("Non-conformable matrices in MatrixProduct");
     int[,] result = new int[aRows, bCols];
     for (int i = 0; i < aRows; ++i) // каждая строка A
         for (int j = 0; j < bCols; ++j) // каждый столбец B
