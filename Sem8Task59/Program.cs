@@ -5,7 +5,6 @@ int ReadData(string message)
     int inputNum = int.Parse(Console.ReadLine() ?? "0");
     return inputNum;
 }
-
 // method fill matrix with random int numbers
 int[,] Fill2DArray(int countRow, int countColumn, int topBorder, int downBorder)
 {
