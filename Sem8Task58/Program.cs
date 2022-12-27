@@ -21,6 +21,7 @@ int[,] Fill2DArray(int countRow, int countColumn, int topBorder, int downBorder)
     return array2D;
 }
 
+//method print coloured matrix
 void Print2DArrayColor(int[,] matrix)
 {
     ConsoleColor[] col = new ConsoleColor[]
@@ -54,52 +55,38 @@ void Print2DArrayColor(int[,] matrix)
     }
 }
 
-(int x, int y) SearchMinElement(int[,] matrix)
+int[,] MatrixMultiplication(int[,] matrixA, int[,] matrixB)
 {
-    int min = matrix[0,0];
-    int row =0;
-    int column = 0;
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            if(matrix[i,j]<min)
-            {
-                min = matrix[i,j];
-                row = i;
-                column = j;
-            }
-        }
-    }
-    return (row, column);
+    int aRows = matrixA.GetLength(0);
+    int aCols = matrixA.GetLength(1);
+    int bRows = matrixB.GetLength(0);
+    int bCols = matrixB.GetLength(1);
+    // if (aCols != bRows)
+    // throw new Exception("Non-conformable matrices in MatrixProduct");
+    int[,] result = new int[aRows, bCols];
+    for (int i = 0; i < aRows; ++i) // каждая строка A
+        for (int j = 0; j < bCols; ++j) // каждый столбец B
+            for (int k = 0; k < aCols; ++k)
+                result[i, j] += matrixA[i, k] * matrixB[k, j];
+    return result;
 }
 
-int[,] Convert2DArray(int[,] arr, int x, int y)
-{
-    int[,] outArray = new int[arr.GetLength(0)-1,arr.GetLength(1)-1];
-    int rowNew = 0;
-    int columnNew = 0;
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        columnNew = 0;
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            if(i!=x && j!=y)
-            {
-                outArray[rowNew, columnNew] = arr[i,j];      
-            }
-            if(j!=columnNew) columnNew++;
-        }
-        if(i!=x) rowNew++;
-    }
-    return outArray;
-}
-//solution
-int row = ReadData("Enter am amount of row ");
-int column = ReadData("Enter am column of row ");
-int[,] arr2D = Fill2DArray(row, column, 0, 99);
-Print2DArrayColor(arr2D);
+int firstRow = ReadData("Enter am amount of row in first matrix");
+int firstColumn = ReadData("Enter am amount of column in first matrix");
+int secondRow = ReadData("Enter am amount of row in second matrix");
+int secondColumn = ReadData("Enter am amount of column in second matrix ");
+int[,] firstMatrix = Fill2DArray(firstRow, firstColumn, 0, 5);
+Print2DArrayColor(firstMatrix);
 Console.WriteLine();
-(int x, int y) minElement = SearchMinElement(arr2D);
-int[,] out2DArray = Convert2DArray(arr2D, minElement.x, minElement.y);
-Print2DArrayColor(out2DArray);
+int[,] secondMatrix = Fill2DArray(secondRow, secondColumn, 0, 10);
+Print2DArrayColor(secondMatrix);
+Console.WriteLine();
+if (firstColumn == secondRow)
+{
+    int[,] multMatrix = MatrixMultiplication(firstMatrix, secondMatrix);
+    Print2DArrayColor(multMatrix);
+}
+else
+{
+    Console.Write("This matrix can't be multiplied");
+}
