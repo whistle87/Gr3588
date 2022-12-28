@@ -7,41 +7,40 @@ int ReadData(string message)
 }
 
 // method fill matrix spirally
-int[,] Fill2DArraySpiral(int countRow, int countColumn, int number)
-{
-    int[,] array2D = new int[countRow, countColumn];
-    for (int i = 0; i < countColumn; i++)
+void Fill2DArraySpiral(int[,] array2D, int number, int[] startPosition)
+{    
+    for (int i = startPosition[1]; i < array2D.GetLength(1)-startPosition[1]; i++)
     {
-        array2D[0, i] = number;
+        array2D[startPosition[0], i] = number;
         number++;
     }
-    for (int i = 1; i < countRow; i++)
+    for (int i = startPosition[0]+1; i < array2D.GetLength(0)-startPosition[0]; i++)
     {
-       array2D[i,countColumn-1] = number;
+       array2D[i,array2D.GetLength(1)-1-startPosition[1]] = number;
        number++; 
     }
-    for (int i = countColumn-2; i >=0 ; i--)
+    for (int i = array2D.GetLength(1)-2-startPosition[1]; i >=startPosition[1] ; i--)
     {
-        array2D[countRow-1,i] = number;
+        array2D[array2D.GetLength(0)-1-startPosition[0],i] = number;
         number++; 
     }
-    for (int i =countRow-2; i > 0; i--)
+    for (int i =array2D.GetLength(0)-2-startPosition[0]; i > startPosition[0]; i--)
     {
-        array2D[i,0] = number;
+        array2D[i,startPosition[1]] = number;
         number++; 
     }
-    for (int i = 1; i < countColumn-1; i++)
+    startPosition[0]++;
+    startPosition[1]++;
+    bool matrixEmpty = false;
+    for (int i = startPosition[0]; i < array2D.GetLength(0); i++)
     {
-        array2D[1, i] = number;
-        number++;
+        for (int j = startPosition[1]; j < array2D.GetLength(1); j++)
+        {
+            if (array2D[i,j]==0) matrixEmpty = true;
+        }
     }
-    for (int i = countColumn-2; i >0 ; i--)
-    {
-        array2D[countRow-2,i] = number;
-        number++; 
-    }
-
-    return array2D;
+    if (matrixEmpty)  Fill2DArraySpiral(array2D, number, startPosition);
+    else return;
 }
 //methos print matrix to array
 void Print2DArrayColor(int[,] matrix)
@@ -79,7 +78,9 @@ void Print2DArrayColor(int[,] matrix)
 
 //solution
 int startNum = ReadData("Enter a first number ");
-int row = 4;
-int column = 4;
-int[,] array2DSpiral = Fill2DArraySpiral(row, column, startNum);
-Print2DArrayColor(array2DSpiral);
+int row = ReadData("Enter an amount of row ");
+int column = ReadData("Enter an amoun of column ");
+int[,] array2D = new int[row, column];
+int[] startPosition = new int[2] {0,0};
+Fill2DArraySpiral(array2D, startNum, startPosition);
+Print2DArrayColor(array2D);
